@@ -1,0 +1,30 @@
+Guia git:
+    - creo mi cuenta en github y me descargo gitbash
+
+Para crear tu propio repo:
+    -creo repositorio en mi cuenta de github
+    -desde el git bash, parado en la carpeta del proyecto pongo git init (me crea un repo vacio en la carpeta)
+    -git remote add origin LINK (ej : https://github.com/jongibaut/test.git)
+    -git add . (añade toddos los archivos en la carpeta al repo, si los archivos se repiten agrega solo los que se cambiaron o agregaron)
+    -git commit -m "nota o cambios realizados" (guardo un mensaje con los cambios realizados)
+    -git push origin master ("pusheo" o cargo los archivos a mi repo de github)
+    -pongo mi usuario y contra de la cuenta en donde cree el repo
+
+Para actualizar tu repo:
+    -git add . (añade los archivos nuevos o altera los modificados)
+    -git commit -m "cambios"
+    -git push origin master
+    -pongo mi usuario y contra de la cuenta en donde cree el repo
+
+Para clonar cualquier repo de github:
+    -accedo al link del repo (ej : https://github.com/jongibaut/test.git)
+    -pongo en gitbash git clone LINK (ej : https://github.com/jongibaut/test.git)
+    -esto me carga todo ese repo en una carpeta
+
+Para tener el repo al dia:
+    -me paro en la carpeta del repo clonado
+    -me conecto con git init y git remote add origin
+    -para tener una version actualizada del repo pongo git pull origin master y me descarga y cambia los archivos a la version ams nueva
+
+Archivo .gitignore:
+    -lo uso para decalrar que carpetas o archivos quiero ignorar en mi repo (ej : los node_modules y el .env)
