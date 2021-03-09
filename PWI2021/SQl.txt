@@ -1,0 +1,5 @@
+SQL:
+SELECT (selecciona de la base de datos) *(todos los datos) o solo algunos datos(nombre , contra) FROM (nombre de la tabla)
+WHERE (funciona como el IF) LIKE "%messi%" (el porcentaje funciona como un mientras tenga esto no me importa lo que haya antes o despues) AND (&& en JS)
+INSERT INTO tabla (datos) VALUES (valores) (inserta dato en la tabla y le pasa los valores)
+UPDATE nombreTabla SET columna = dato WHERE 

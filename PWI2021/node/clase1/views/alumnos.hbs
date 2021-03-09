@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h3>{{curso}}</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2>Alumnos : </h2>
+            <table class="table table-hover">
+                <thead>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                </thead>
+                <tbody>
+                    {{#each alumnos}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{nombre}}</td>
+                        <td>{{edad}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

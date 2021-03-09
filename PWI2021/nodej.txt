@@ -1,0 +1,60 @@
+Guia practica para empezar con node
+
+Descargar NodeJS desde https://nodejs.org/en/
+
+
+NodeJS: motor de ejecucion de codigo NodeJS
+NPM (Node Package Manager): maneja los paquetes de node(lo uso para instalar diferentes plugins para node y ejecutar la pagina)
+Express (framework): se maneja con modulos(librerias que son un conjuto de funciones predeterminadas por express)
+
+CMD:
+cd carpeta : nos movemos de carpeta
+cd ..  : vuelvo para atras
+mkdir carpeta : creo una carpeta donde estoy parado
+cls : clear screen limpia la pantalla
+
+Cosas a instalar:
+
+-g = GLOBAL, se me isntala en toda la compu y lo necesito instalar una sola vez
+npm install express -g
+npm install express-generator -g (me genera una estructura minima de un proyecto en node)
+npm install nodemon -g (ejecutar la pagina en tiempo real)
+
+i es lo mismo que poner install.
+
+Crear proyecto nuevo con handlebars:
+
+express Nombre --hbs
+
+Ejecutar proyecto por primera vez:
+
+cd Nombre
+npm i : me instala los node modules
+nodemon npm start
+
+LOS WARNINGS NO PASA NADA
+
+
+
+XAMPP X- se puede usar en cualquier Sistema Operativo
+WAMPP W- se usa en Windows
+MAMPP M- se usa MacOS
+LAMPP L- se usa en Linux
+
+
+req (request)-> envio de datos (cliente->servidor) req.body acccedo a los datos del body de la pagina dondde estoy
+se usan los metodos:
+POST-> crear un usuario(le paso los datos desde un form)
+PUT-> modificar un usuario(le paso los datos desde un form)
+
+Para conexion con MySQL:
+Instalar mysql y util
+npm i mysql (me sirve para conectarme con la base de datos y hacer consultas(querys) pero no sirve para promesas)
+npm i util (me convierte un dato en async y me permita usar promesas)
+
+
+M V C
+modelo de arquitectura de software divide el modelo la vista y el controlador en diferentes secciones (carpetas)
+Modelo: BDD (obtenemos informacion)
+Vista: Los hbs las views (me muestra la informacion del modelo)
+Controlador: Rutas (routes)

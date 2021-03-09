@@ -1,0 +1,92 @@
+.clase2 {
+    background-color: pink;
+    background-image: url(img/bobesponja.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h2 {
+    border-width: 12px;
+    border-color: rgb(255, 38, 0);
+    border-style: solid;
+    border-color: teal;
+    font-family: fantasy;
+}
+
+.miclase {
+    background-color: aquamarine;
+    text-align: center;
+
+}
+
+.mover {
+    padding: 50px 80px 20px 10px;
+    border-color: green;
+    border-style: solid;
+    border-width: 5px;
+    margin-bottom: 10px;
+    color: blue;
+}
+
+#lista {
+    border-color: brown;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 5px;
+}
+
+/*# afecta al id que se llama igual, border radius redondea las puntas del border*/
+.fa-linkedin-in {
+    color: hotpink;
+}
+
+.fa-instagram {
+    color: chartreuse;
+}
+
+.clase {
+    width: 600px;
+}
+
+.flexbox {
+    width: 1800px;
+    height: 1000px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+
+}
+
+.contenido-container {
+    background-color: darkblue;
+    font-size: x-large;
+    color: white;
+    text-align: center;
+    width: 200px;
+    margin-top: 20px;
+}
+
+.container {
+    display: grid;
+    background-color: cyan;
+    height: 500px;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 100px 50px 200px;
+    grid-gap: 15px;
+    align-content: space-around;
+    /*trabaja en las columnas*/
+    justify-content: space-around;
+    /*trabaja en las filas*/
+}
+
+table {
+    border-color: violet;
+    border-style: dashed;
+}
+
+th {
+    border-color: violet;
+    border-style: dashed;
+}

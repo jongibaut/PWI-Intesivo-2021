@@ -1,0 +1,5 @@
+Agregarle a la pagina final un form para agregar un usuario al array y agregarlo, que cumpla todas las condiciones para ser agregado, ningun espacio vacio.
+var objeto = {
+    nombre: document.getelemntbyid("username").value
+}
+array.push(objeto)

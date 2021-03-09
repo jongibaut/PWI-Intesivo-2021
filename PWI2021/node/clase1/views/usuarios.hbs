@@ -1,0 +1,31 @@
+{{#if multiple}}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2>Usuarios : </h2>
+            <table class="table table-hover">
+                <thead>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                </thead>
+                <tbody>
+                    {{#each usuarios}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{nombre}}</td>
+                        <td>{{apellido}}</td>
+                        <td>{{edad}}</td>
+                        <td><a href="/usuarios/single/{{id}}">Ver Mas</a></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+{{else}}
+<h2>Usuario: {{usuario.nombre}} {{usuario.apellido}} {{usuario.edad}}</h2>
+{{/if}}

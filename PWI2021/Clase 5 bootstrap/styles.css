@@ -1,0 +1,17 @@
+.btn-primary {
+    background-color: purple;
+    border: purple;
+}
+
+.btn-primary:hover {
+    background-color: purple;
+}
+
+.bg-purple {
+    background-color: purple;
+}
+
+.table-purple {
+    background-color: purple;
+    color: white;
+}
