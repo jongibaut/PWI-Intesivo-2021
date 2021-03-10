@@ -1,3 +1,13 @@
-{{#each productos}}
-<h2>{{nombre}}</h2>
-{{/each}}
+<div class="container">
+    <div class="row">
+        {{#each productos}}
+        <div class="card" style="width: 18rem; margin-right: 5rem;">
+            <img src="images/{{uid}}" class="card-img-top" alt="no se encontro la imagen">
+            <div class="card-body">
+                <h5 class="card-title">{{nombre}}</h5>
+                <p class="card-text">{{descripcion}}</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
