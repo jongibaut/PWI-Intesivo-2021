@@ -3,15 +3,18 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
 var dotenv = require('dotenv');
+const {verifyAdmin, verifyUser} = require('./midlewares/auth');
 dotenv.config();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var empleadosRouter = require('./routes/empleados');
-var productosRouter = require('./routes/productos');
+var empleadosRouter = require('./routes/admin/empleados');
+var productosRouter = require('./routes/admin/productos');
 var loginRouter = require('./routes/login');
-var usuariosRouter = require('./routes/usuarios');
+var usuariosRouter = require('./routes/admin/usuarios');
+var perfilRouter = require('./routes/perfil');
 
 var app = express();
 
@@ -24,13 +27,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: 'pass secreto',
+  cookie : {maxAge : null},
+  resave: true,
+  saveUninitialized: false
+}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/empleados', empleadosRouter);
-app.use('/productos', productosRouter);
+app.use('/admin/empleados',verifyAdmin, empleadosRouter);
+app.use('/admin/productos', verifyAdmin, productosRouter);
 app.use('/login', loginRouter);
-app.use('/usuarios', usuariosRouter);
+app.use('/admin/usuarios', verifyAdmin, usuariosRouter);
+app.use('/perfil', verifyUser, perfilRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -7,7 +7,7 @@ const get = async(habilitado) => {
     return await pool.query(query, params);
 }
 const single = async(id) => {
-    const query ="SELECT id, user, pass, admin FROM ?? WHERE id = ?";
+    const query ="SELECT user, pass FROM ?? WHERE id = ?";
     const params= [TABLA_USUARIOS, id];
     return await pool.query(query, params);
 }
@@ -16,5 +16,20 @@ const convert = async(admin, id) => {
     const params = [TABLA_USUARIOS, admin, id];
     return await pool.query(query, params);
 }
+const auth = async ({user, pass}) => {
+    try {
+    const query = "SELECT id, admin FROM ?? WHERE user = ? AND pass = ?";
+    const params = [TABLA_USUARIOS, user, pass];
+    return await pool.query(query, params);
+    }
+    catch(e){
+        console.log(e);
+    }
+}
 
-module.exports = {get, single, convert};
+
+const create = (obj) => {
+    pool.query("INSERT INTO ?? SET ?", [TABLA_USUARIOS, obj]).then((result)=> result).catch((e)=> console.log(e));
+}
+
+module.exports = {get, single, convert, create, auth};

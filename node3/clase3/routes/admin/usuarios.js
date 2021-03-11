@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const model = require('../models/usuarios');
+const model = require('../../models/usuarios');
+const sha1 = require('sha1');
 
 const get = async(req,res) => {
     const usuarios = await model.get(true);
@@ -16,8 +17,17 @@ const convert = async(req,res) => {
     }
     });
     const convertir = await model.convert(admin, id);
-    res.redirect('/usuarios');
+    res.redirect('/admin/usuarios');
+}
+const create = async(req,res) => {
+    req.body.pass = sha1(req.body.pass);
+    const obj = req.body;
+    console.log(req.body)
+    var newUser = await model.create(obj);
+    res.render('crearUsuario', {message: "Usuario creado!"});
 }
 router.get('/', get);
 router.get('/convert/:id', convert);
+router.post('/create',create);
+router.get('/create', (req,res) => res.render('crearUsuario'));
 module.exports = router;
