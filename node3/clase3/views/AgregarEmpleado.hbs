@@ -2,14 +2,18 @@
     <h1>Agregar Empleado:</h1>
     <div class="row">
         <div class="col-8">
-            <form method="POST" action="/empleados/create">
+            <form method="POST" action="/admin/empleados/create">
                 <div class="form-group">
                     <label for="nombre">Nombre:</label>
                     <input type="text" class="form-control" name="nombre" placeholder="nombre">
                     <label for="apellido">Apellido:</label>
                     <input type="text" class="form-control" name="apellido" placeholder="apellido">
                     <label for="id_sucursal">id_sucursal:</label>
-                    <input type="number" class="form-control" name="id_sucursal" placeholder="sucursal" min="1" max="2">
+                    <select name="id_sucursal" class="form-select">
+                        {{#each nombres}}
+                        <option value="{{id}}">{{nombre}}</option>
+                        {{/each}}
+                    </select>
                     <label for="sueldo">Sueldo:</label>
                     <input type="number" class="form-control" name="sueldo" placeholder="sueldo" min="1">
                     <label for="antiguedad">Antiguedad:</label>

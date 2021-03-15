@@ -1,7 +1,7 @@
 {{#if status}}
 <div class="container">
-    <button class="btn btn-danger" type="button"><a href="admin/empleados/create"> CREAR EMPLEADO </a></button>
-    <button class="btn btn-danger" type="button"><a href="admin/empleados/disabled"> EMPLEADOS
+    <button class="btn btn-danger" type="button"><a href="empleados/create"> CREAR EMPLEADO </a></button>
+    <button class="btn btn-danger" type="button"><a href="empleados/disabled"> EMPLEADOS
             DESHABILITADOS</a></button>
     <div class="row">
         <table class="table">
@@ -21,9 +21,9 @@
                     <td>{{nombre}}</td>
                     <td>{{apellido}}</td>
                     <td>{{nombreSucursal}}</td>
-                    <td><a href="/empleados/single/{{id}}">Ver Mas</a></td>
-                    <td><a href="/empleados/update/{{id}}">Modificar</a></td>
-                    <td><a href="/empleados/delete/{{id}}">Borrar</a></td>
+                    <td><a href="empleados/single/{{id}}">Ver Mas</a></td>
+                    <td><a href="empleados/update/{{id}}">Modificar</a></td>
+                    <td><a href="empleados/delete/{{id}}">Borrar</a></td>
                 </tr>
                 {{/each}}
             </tbody>
@@ -33,7 +33,7 @@
 </div>
 {{else}}
 <div class="container">
-    <button class="btn btn-danger" type="button"><a href="/empleados"> EMPLEADOS HABILITADOS</a></button>
+    <button class="btn btn-danger" type="button"><a href="empleados"> EMPLEADOS HABILITADOS</a></button>
     <div class="row">
         <table class="table">
             <thead>
@@ -50,7 +50,7 @@
                     <td>{{nombre}}</td>
                     <td>{{apellido}}</td>
                     <td>{{nombreSucursal}}</td>
-                    <td><a href="/empleados/disabled/{{id}}">Habilitar</a></td>
+                    <td><a href="empleados/disabled/{{id}}">Habilitar</a></td>
                 </tr>
                 {{/each}}
             </tbody>
