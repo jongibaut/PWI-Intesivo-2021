@@ -7,7 +7,6 @@ npm i dotenv // me sirve para crear archivos ocultos .env
 npm i nodemailer // me sirve para conectarme con nodemailer 
 npm i multer // manejador de archivos para JS
 npm i uuid // genera ids unicos de 45 caracteres
------
 npm i sha1 // encripta contras
-npm i mongodb // base de datos no relacional 
-npm i mongoose // libreria par mongo
+npm i express-session // instala las sessions
+npm i @hapi/joi // me sirve apra las validaciones
