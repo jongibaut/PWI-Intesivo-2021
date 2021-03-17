@@ -6,6 +6,11 @@ const get = async(habilitado) => {
     const params = [TABLA_USUARIOS, habilitado];
     return await pool.query(query, params);
 }
+const update = async({data, uid}) => {
+    const query = "UPDATE ?? SET ? WHERE confirmacionCorreo = ?";
+    const params = [TABLA_USUARIOS, data, uid];
+    return await pool.query(query, params);
+}
 const single = async(id) => {
     const query ="SELECT user, pass FROM ?? WHERE id = ?";
     const params= [TABLA_USUARIOS, id];
@@ -32,4 +37,4 @@ const create = (obj) => {
     pool.query("INSERT INTO ?? SET ?", [TABLA_USUARIOS, obj]).then((result)=> result).catch((e)=> console.log(e));
 }
 
-module.exports = {get, single, convert, create, auth};
+module.exports = {get, single, convert, create, auth, update};

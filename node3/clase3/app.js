@@ -11,10 +11,13 @@ dotenv.config();
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var empleadosRouter = require('./routes/admin/empleados');
-var productosRouter = require('./routes/admin/productos');
+var adminProductosRouter = require('./routes/admin/productos');
 var loginRouter = require('./routes/login');
 var usuariosRouter = require('./routes/admin/usuarios');
 var perfilRouter = require('./routes/perfil');
+var registroRouter = require('./routes/registro');
+var productosRouter = require('./routes/productos');
+var carritoRouter = require('./routes/carrito');
 
 var app = express();
 
@@ -37,10 +40,13 @@ app.use(session({
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin/empleados',verifyAdmin, empleadosRouter);
-app.use('/admin/productos', verifyAdmin, productosRouter);
+app.use('/admin/productos', verifyAdmin, adminProductosRouter);
 app.use('/login', loginRouter);
 app.use('/admin/usuarios', verifyAdmin, usuariosRouter);
 app.use('/perfil', verifyUser, perfilRouter);
+app.use('/registro', registroRouter);
+app.use('/productos',verifyUser, productosRouter);
+app.use('/carrito', verifyUser, carritoRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
